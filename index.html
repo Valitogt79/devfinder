@@ -4,9 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DevFinder</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="js/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Main Widget -->
+    <main class="main">
+      <!-- header -->
+      <header class="header">
+        <h1 class="header__title">DevFinder</h1>
+        <nav class="theme">LIGHT <i class="fa fa-sun"></i></nav>
+      </header>
+      <!-- Search -->
+      <section class="search">
+        <form class="form">
+          <i class="fa fa-search form__icon"></i>
+          <input
+            type="search"
+            class="form__input"
+            placeholder="Search Gitgub Username..."
+          />
+          <input class="form__buttom" type="submit" value="Search" />
+        </form>
+      </section>
+      <!-- Result -->
+      <article class="result">
+        <div class="content">
+          <img
+            src="https://w7.pngwing.com/pngs/193/660/png-transparent-computer-icons-woman-avatar-avatar-girl-thumbnail.png"
+            alt=""
+            class="avatar"
+          />
+          <h2 class="name">Name and Surname</h2>
+          <h5 class="username">Username</h5>
+          <p class="bio">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum totam,
+            voluptatibus provident quia sunt voluptates quaerat soluta ipsa
+            doloribus, perspiciatis nisi quo modi sequi officiis at perferendis
+            doloremque quasi saepe!
+          </p>
+        </div>
+      </article>
+    </main>
+  </body>
 </html>
