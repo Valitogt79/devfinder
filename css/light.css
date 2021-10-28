@@ -1,0 +1,48 @@
+/* Dark theme custom styles */
+body {
+  background-color: #e9e8fc;
+}
+.header__title {
+  color: #474747;
+}
+.theme i {
+  color: #474747;
+}
+
+.theme__switch {
+  color: #474747;
+}
+.search {
+  background-color: white;
+  box-shadow: 3px 3px 5px 2px lightgrey;
+}
+.form__input {
+  color: #474747;
+}
+.form__icon {
+  color: #0078fe;
+}
+.result {
+  background-color: white;
+  box-shadow: 3px 3px 5px 2px lightgrey;
+}
+.bio {
+  color: #474747;
+}
+
+.stats {
+  background-color: #e9e8fc;
+}
+.stats > small {
+  color: #474747;
+}
+.link {
+  color: #474747;
+}
+
+.link i {
+  color: #474747;
+}
+.link a {
+  color: #474747;
+}
