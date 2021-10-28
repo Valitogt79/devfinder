@@ -14,16 +14,17 @@ body {
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #141c2f;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
 }
 
 /* main */
 .main {
   max-width: 70vw;
+  min-width: 320px;
   min-height: 20rem;
 }
 /* header */
@@ -46,12 +47,16 @@ body {
 }
 
 .theme i {
-  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.theme__switch {
+  color: white;
+  text-decoration: none;
 }
 /* search */
 .search {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
-  background-color: #1f2a48;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -67,12 +72,10 @@ body {
   flex-grow: 1;
   background-color: transparent;
   border: none;
-  color: lightgrey;
   font-family: inherit;
   outline: none;
 }
 .form__icon {
-  color: #0078fe;
   font-size: 1.2rem;
 }
 
@@ -88,7 +91,6 @@ body {
 /* result */
 .result {
   padding: 2rem;
-  background-color: #1f2a48;
   display: grid;
   border-radius: 1rem;
   grid-template-rows: auto auto auto;
@@ -101,6 +103,21 @@ body {
     "avatar stats stats"
     "avatar contact contact";
 }
+
+.waiting,
+.not-found {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* .not-found {
+  display: none;
+}
+
+.not-found.visible {
+  display: block;
+} */
 
 .avatar {
   width: 80px;
@@ -134,12 +151,10 @@ body {
   grid-area: bio;
   margin: 0;
   font-size: 0.7rem;
-  color: lightgrey;
 }
 
 .stats {
   grid-area: stats;
-  background-color: #141c2f;
   display: flex;
   flex-wrap: wrap;
   padding: 0.5rem 1rem;
@@ -150,14 +165,13 @@ body {
 
 .stats > p {
   margin: 0;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   flex-basis: 33%;
 }
 .stats > small {
   margin: 0;
-  font-size: 0.5rem;
+  font-size: 1.5rem;
   flex-basis: 33%;
-  color: lightgrey;
 }
 .contact {
   grid-area: contact;
@@ -167,13 +181,12 @@ body {
 }
 
 .link {
-  color: lightgrey;
   text-decoration: none;
   font-size: 0.7rem;
 }
 
 .link i {
-  color: white;
+  margin-right: 0.3rem;
 }
 
 @media screen and (max-width: 540px) {
@@ -196,5 +209,13 @@ body {
 
   .bio {
     margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .contact {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
