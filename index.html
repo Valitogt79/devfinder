@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevFinder</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link class="theme-css" rel="stylesheet" href="css/dark.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
       integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <script src="js/main.js" defer></script>
   </head>
-  <body>
+  <body class="dark">
     <!-- Main Widget -->
     <main class="main">
       <!-- header -->
       <header class="header">
         <h1 class="header__title">DevFinder</h1>
-        <nav class="theme">LIGHT <i class="fa fa-sun"></i></nav>
+        <nav class="theme">
+          <a class="theme__switch" href="#"
+            ><span class="theme__name">LIGHT</span> <i class="fa fa-sun"></i
+          ></a>
+        </nav>
       </header>
       <!-- Search -->
       <section class="search">
@@ -38,13 +43,15 @@
       </section>
       <!-- Result -->
       <article class="result">
-        <img
+        <img class="waiting" src="img/waiting.webp" alt="I´m Waiting" />
+
+        <!-- <img
           src="https://w7.pngwing.com/pngs/193/660/png-transparent-computer-icons-woman-avatar-avatar-girl-thumbnail.png"
           alt=""
           class="avatar"
-        />
+        />-->
         <!-- User Info -->
-        <h2 class="name">Name and Surname</h2>
+        <!-- <h2 class="name">Name and Surname</h2>
         <h4 class="joined">Joined 25 Jan 2021</h4>
         <h5 class="username">Username</h5>
         <p class="bio">
@@ -52,18 +59,18 @@
           voluptatibus provident quia sunt voluptates quaerat soluta ipsa doloribus,
           perspiciatis nisi quo modi sequi officiis at perferendis doloremque quasi
           saepe!
-        </p>
+        </p> -->
         <!-- Stats -->
-        <section class="stats">
+        <!-- <section class="stats">
           <p class="repos">Repos</p>
           <p class="followers">Followers</p>
           <p class="following">Following</p>
           <small class="repos">8</small>
           <small class="followers">3000</small>
           <small class="following">9</small>
-        </section>
+        </section> -->
         <!-- Contact -->
-        <nav class="contact">
+        <!-- <nav class="contact">
           <a href="#" class="link"
             ><i class="fa fa-map-marker-alt"></i> San francisco</a
           >
@@ -72,7 +79,7 @@
           <a href="#" class="link"
             ><i class="fas fa-link"></i> https://github.blog</a
           >
-        </nav>
+        </nav> -->
       </article>
     </main>
   </body>
