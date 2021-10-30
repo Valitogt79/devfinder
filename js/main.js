@@ -13,55 +13,55 @@ const themeName = document.querySelector(".theme__name");
 /* Listen varius event */
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  /* Get the username form the imput */
-  const username = input.value.trim();
-  if (!username) return;
-  getUserData(username);
-  input.value = "";
+    /* Get the username form the imput */
+    const username = input.value.trim();
+    if (!username) return;
+    getUserData(username);
+    input.value = "";
 });
 
 themeSwitch.addEventListener("click", switchTheme);
 
 /* Query the Github API for that username */
 async function getUserData(username) {
-  try {
-    const response = await fetch(API + username);
-    if (!response.ok) {
-      throw new Error("User not found");
+    try {
+        const response = await fetch(API + username);
+        if (!response.ok) {
+            throw new Error("User not found");
+        }
+        const data = await response.json();
+        showUserData(data);
+    } catch (error) {
+        console.error("ERROR", error);
+        showNotFound();
     }
-    const data = await response.json();
-    showUserData(data);
-  } catch (error) {
-    console.error("ERROR", error);
-    showNotFound();
-  }
 }
 /* Show Not Found (404) message */
 function showNotFound() {
-  const image = '<img src="img/404.gif" alt="Not Found" class="not-found" />';
-  result.innerHTML = image;
+    const image = '<img src="img/404.gif" alt="Not Found" class="not-found" />';
+    result.innerHTML = image;
 }
 
 /* Show username data */
 function showUserData(data) {
-  const {
-    login,
-    avatar_url: avatar,
-    name,
-    company,
-    blog,
-    location,
-    bio,
-    email,
-    twitter_username: twitter,
-    public_repos: repos,
-    followers,
-    following,
-    created_at: joined,
-  } = data;
-  const userData = `<img
+    const {
+        login,
+        avatar_url: avatar,
+        name,
+        company,
+        blog,
+        location,
+        bio,
+        email,
+        twitter_username: twitter,
+        public_repos: repos,
+        followers,
+        following,
+        created_at: joined,
+    } = data;
+    const userData = /* html */ `<img
           src="${avatar}"
           alt=""
           class="avatar"
@@ -93,25 +93,26 @@ function showUserData(data) {
             ><i class="fas fa-link"></i> ${company}</a
           >
         </nav> `;
-  result.innerHTML = userData;
-  function parseDate(date) {
-    let options = {
-      weekday: "short",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-    return new Date(date).toLocaleString("es-ES", options);
-  }
+    result.innerHTML = userData;
+
+    function parseDate(date) {
+        let options = {
+            weekday: "short",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        };
+        return new Date(date).toLocaleString("es-ES", options);
+    }
 }
 /* Do the theme Switching stuff */
 function switchTheme() {
-  dark = !dark;
-  if (dark) {
-    themeCSS.setAttribute("href", "css/light.css");
-    themeName.textContent = "DARK";
-  } else {
-    themeCSS.setAttribute("href", "css/dark.css");
-    themeName.textContent = "LIGHT";
-  }
+    dark = !dark;
+    if (dark) {
+        themeCSS.setAttribute("href", "css/light.css");
+        themeName.textContent = "DARK";
+    } else {
+        themeCSS.setAttribute("href", "css/dark.css");
+        themeName.textContent = "LIGHT";
+    }
 }
